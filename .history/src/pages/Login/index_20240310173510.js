@@ -3,35 +3,25 @@ import logo from '@/assets/logo.png'
 import './index.scss'
 
 const Login = () => {
-    const onFinish = (values) => {
-        console.log(values)
-    }
     return (
         <div className="login">
             <Card className="login-container">
                 <img className="login-logo" src={logo} alt="" />
                 {/* 登录表单 */}
-                <Form
-                    validateTrigger="onBlur"
-                    onFinish={onFinish}
-                >
+                <Form>
                     <Form.Item
-                        name="mobile"
+                        name="phone"
                         rules={[
                             {
                                 required: true,
                                 message: '请输入手机号',
                             },
-                            {
-                                pattern: /^1[3-9]\d{9}$/,
-                                message: '手机号码格式不对'
-                            }
                         ]}
                     >
                         <Input size="large" placeholder="请输入手机号" />
                     </Form.Item>
                     <Form.Item
-                        name="code"
+                        name="verification"
                         rules={[
                             {
                                 required: true,
@@ -41,7 +31,10 @@ const Login = () => {
                     >
                         <Input size="large" placeholder="请输入验证码" />
                     </Form.Item>
-                    <Form.Item>
+                    <Form.Item
+                        name="agree"
+                        valuePropName="checked"
+                    >
                         <Checkbox className="login-checkbox-label">
                             我已阅读并同意「用户协议」和「隐私条款」
                         </Checkbox>

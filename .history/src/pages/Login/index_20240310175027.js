@@ -31,7 +31,7 @@ const Login = () => {
                         <Input size="large" placeholder="请输入手机号" />
                     </Form.Item>
                     <Form.Item
-                        name="code"
+                        name="verification"
                         rules={[
                             {
                                 required: true,

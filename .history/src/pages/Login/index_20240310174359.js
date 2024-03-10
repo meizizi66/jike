@@ -3,18 +3,12 @@ import logo from '@/assets/logo.png'
 import './index.scss'
 
 const Login = () => {
-    const onFinish = (values) => {
-        console.log(values)
-    }
     return (
         <div className="login">
             <Card className="login-container">
                 <img className="login-logo" src={logo} alt="" />
                 {/* 登录表单 */}
-                <Form
-                    validateTrigger="onBlur"
-                    onFinish={onFinish}
-                >
+                <Form validateTrigger="onBlur">
                     <Form.Item
                         name="mobile"
                         rules={[
@@ -22,16 +16,12 @@ const Login = () => {
                                 required: true,
                                 message: '请输入手机号',
                             },
-                            {
-                                pattern: /^1[3-9]\d{9}$/,
-                                message: '手机号码格式不对'
-                            }
                         ]}
                     >
                         <Input size="large" placeholder="请输入手机号" />
                     </Form.Item>
                     <Form.Item
-                        name="code"
+                        name="verification"
                         rules={[
                             {
                                 required: true,
